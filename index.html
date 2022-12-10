@@ -10,15 +10,39 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/tasks.css" />
     <script defer src="./js/script.js"></script>
-    <title>Document</title>
+    <title>Lista zadań</title>
   </head>
-  <body>
-    <form class="js-form" action="">
-      <input class="js-newTask" type="text" />
-      <button>Dodaj zadanie</button>
-    </form>
-    <ul class="js-tasks"></ul>
+  <body class="body">
+    <header class="header">
+      <h1 class="header__heading">Lista zadań</h1>
+    </header>
+    <section>
+      <form class="form js-form">
+        <h2 class="form__heading">Dodaj nowe zadanie</h2>
+        <div class="form__interface">
+          <input
+            class="form__input js-newTask"
+            type="text"
+            placeholder="Co jest do zrobienia?"
+          />
+          <button class="form__button">Dodaj zadanie</button>
+        </div>
+      </form>
+    </section>
+    <section class="tasks">
+      <h2 class="tasks__heading">Lista zadań</h2>
+      <ul class="tasks__list js-tasks"></ul>
+    </section>
   </body>
 </html>

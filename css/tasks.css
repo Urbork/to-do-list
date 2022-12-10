@@ -1,0 +1,25 @@
+.tasks {
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.tasks__heading {
+  border-bottom: 2px solid whitesmoke;
+}
+
+.tasks__list {
+}
+
+.tasks__button {
+}
+
+.tasks__button--remove {
+}
+
+.tasks__item {
+}
+
+.tasks__item--done {
+  text-decoration: line-through;
+}

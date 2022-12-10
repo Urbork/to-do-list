@@ -1,0 +1,23 @@
+.form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+}
+
+.form__heading {
+  border-bottom: 2px solid whitesmoke;
+}
+
+.form__interface {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__input {
+}
+
+.form__button {
+}

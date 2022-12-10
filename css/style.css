@@ -11,4 +11,5 @@ html {
 .body {
   background-color: whitesmoke;
   font-family: "Montserrat", sans-serif;
+  word-break: break-word;
 }

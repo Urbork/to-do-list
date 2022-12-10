@@ -11,7 +11,7 @@
   ];
 
   const addNewTask = (newTaskContent) => {
-    tasks.push({
+    tasks.unshift({
       content: newTaskContent,
     });
 

@@ -28,14 +28,15 @@
   background-color: red;
 }
 
-.tasks__item {
+.tasks__listItem {
   padding: 8px 0;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 8px;
+  align-items: center;
   border-bottom: 2px solid whitesmoke;
 }
 
-.tasks__item--done {
+.tasks__listItemText--done {
   text-decoration: line-through;
 }

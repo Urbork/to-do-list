@@ -62,10 +62,6 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
 
     bindEvents();
-
-    const newTaskElement = document.querySelector(".js-newTask");
-    newTaskElement.value = "";
-    newTaskElement.focus();
   };
 
   const onFormSubmit = (event) => {

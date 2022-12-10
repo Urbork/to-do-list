@@ -28,22 +28,7 @@
     render();
   };
 
-  const render = () => {
-    let htmlString = "";
-
-    for (const task of tasks) {
-      htmlString += `<li class="tasks__item${
-        task.done ? " tasks__item--done" : ""
-      }"
-        >
-        <button class="tasks__button js-done">✓</button>
-        ${task.content}
-        <button class="tasks__button tasks__button--remove js-remove">X</button>
-        </li>`;
-    }
-
-    document.querySelector(".js-tasks").innerHTML = htmlString;
-
+  const bindEvents = () => {
     const doneButtonElements = document.querySelectorAll(".js-done");
     doneButtonElements.forEach((doneButtonElement, index) => {
       doneButtonElement.addEventListener("click", () => {
@@ -57,6 +42,26 @@
         removeTask(index);
       });
     });
+  };
+
+  const render = () => {
+    let htmlString = "";
+
+    for (const task of tasks) {
+      htmlString += `<li class="tasks__listItem">
+        <button class="tasks__button js-done">✓</button>
+        <span class="tasks__listItemText${
+          task.done ? " tasks__listItemText--done" : ""
+        }">
+        ${task.content}
+        </span>
+        <button class="tasks__button tasks__button--remove js-remove">X</button>
+        </li>`;
+    }
+
+    document.querySelector(".js-tasks").innerHTML = htmlString;
+
+    bindEvents();
   };
 
   const onFormSubmit = (event) => {

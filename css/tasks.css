@@ -5,19 +5,35 @@
 }
 
 .tasks__heading {
+  padding: 16px;
   border-bottom: 2px solid whitesmoke;
 }
 
 .tasks__list {
+  padding: 8px 16px;
+  list-style: none;
 }
 
 .tasks__button {
+  margin: 0 8px;
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .tasks__button--remove {
+  background-color: red;
 }
 
 .tasks__item {
+  padding: 8px 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 8px;
+  border-bottom: 2px solid whitesmoke;
 }
 
 .tasks__item--done {

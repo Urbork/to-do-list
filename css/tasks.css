@@ -37,6 +37,14 @@
   border-bottom: 2px solid whitesmoke;
 }
 
+.tasks__listItem--hidden {
+  /* display: none; */
+}
+
 .tasks__listItemText--done {
   text-decoration: line-through;
 }
+
+/* WERSJA ROBOCZA / DO ZMIANY?
+.tasks__toggleButton:disabled {  
+} */

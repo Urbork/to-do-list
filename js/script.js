@@ -3,21 +3,28 @@
   let hideDoneTasks = false; // kliknięcie przełącza
 
   const addNewTask = (newTaskContent) => {
-    tasks.unshift({
-      content: newTaskContent,
-    });
+    // tasks.unshift({
+    //   content: newTaskContent,
+    // });
+
+    tasks = [{ content: newTaskContent }, ...tasks];
 
     render();
   };
 
   const toggleDoneTask = (taskIndex) => {
     // tasks = tasks.map( ) immutability
+
     tasks[taskIndex].done = !tasks[taskIndex].done;
+
     render();
   };
 
   const removeTask = (taskIndex) => {
-    tasks.splice(taskIndex, 1);
+    // tasks.splice(taskIndex, 1);
+
+    tasks = [...tasks.slice(0, taskIndex), ...tasks.slice(taskIndex + 1)];
+
     render();
   };
 

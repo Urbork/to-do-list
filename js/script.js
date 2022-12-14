@@ -63,7 +63,15 @@
   const renderButtons = () => {
     // 1: hide done: true
     // 2: toggle all tasks done
-    // skleić HTML jak renderTasks
+    // skleić HTML jak renderTasks\
+    //
+    // let htmlButtons = "";
+    // if (tasks.length === 1) {
+    //   htmlButtons = `
+    // <button>Ukryj ukończone</button>
+    // <button>Ukończ wszystkie</button>`;
+    // }
+    // document.querySelector(".js-interface").innerHTML += htmlButtons;
   };
 
   const bindButtonsEvents = () => {

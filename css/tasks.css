@@ -4,9 +4,22 @@
   background-color: white;
 }
 
-.tasks__heading {
-  padding: 16px;
+.tasks__interface {
+  margin-top: 16px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
   border-bottom: 2px solid whitesmoke;
+}
+
+@media (max-width: 767px) {
+  .tasks__interface {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tasks__heading {
 }
 
 .tasks__list {

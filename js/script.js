@@ -1,12 +1,8 @@
 {
-  let tasks = []; // let, bo zmieniamy unshift na tasks = [ ...tasks, nowezadanie]
+  let tasks = [];
   let hideDoneTasks = false; // kliknięcie przełącza
 
   const addNewTask = (newTaskContent) => {
-    // tasks.unshift({
-    //   content: newTaskContent,
-    // });
-
     tasks = [{ content: newTaskContent }, ...tasks];
 
     render();
@@ -21,8 +17,6 @@
   };
 
   const removeTask = (taskIndex) => {
-    // tasks.splice(taskIndex, 1);
-
     tasks = [...tasks.slice(0, taskIndex), ...tasks.slice(taskIndex + 1)];
 
     render();
@@ -68,17 +62,17 @@
   };
 
   const renderButtons = () => {
-    // 1: hide done: true
-    // 2: toggle all tasks done
-    // skleić HTML jak renderTasks\
-    //
-    // let htmlButtons = "";
-    // if (tasks.length === 1) {
-    //   htmlButtons = `
-    // <button>Ukryj ukończone</button>
-    // <button>Ukończ wszystkie</button>`;
-    // }
-    // document.querySelector(".js-interface").innerHTML += htmlButtons;
+    let htmlButtons = "";
+
+    if (tasks.length === 0) {
+      htmlButtons;
+    } else {
+      htmlButtons += `
+    <button class="tasks__headerButton js-hideAllDone">Ukryj ukończone</button>
+    <button class="tasks__headerButton js-allDone">Ukończ wszystkie</button>`;
+    }
+
+    document.querySelector(".js-buttons").innerHTML = htmlButtons;
   };
 
   const bindButtonsEvents = () => {

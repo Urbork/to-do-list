@@ -8,7 +8,8 @@
   margin-top: 16px;
   padding: 0 16px;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   border-bottom: 2px solid whitesmoke;
 }
 
@@ -17,9 +18,32 @@
     display: flex;
     flex-direction: column;
   }
+
+  .tasks__buttons {
+    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
 
 .tasks__heading {
+}
+
+.tasks__buttons {
+  width: 100%;
+}
+
+.tasks__headerButton {
+  background-color: white;
+  color: teal;
+  border: none;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.tasks__headerButton:hover {
+  color: hsl(180, 100%, 30%);
 }
 
 .tasks__list {
@@ -34,11 +58,20 @@
   background-color: green;
   color: white;
   border: none;
+  transition: 1s;
   cursor: pointer;
+}
+
+.tasks__button:hover {
+  background-color: hsl(120, 100%, 35%);
 }
 
 .tasks__button--remove {
   background-color: red;
+}
+
+.tasks__button--remove:hover {
+  background-color: hsl(0, 100%, 65%);
 }
 
 .tasks__listItem {

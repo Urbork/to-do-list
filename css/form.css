@@ -35,5 +35,11 @@
   background-color: teal;
   color: white;
   border: none;
+  transition: 1s;
   cursor: pointer;
+}
+
+.form__button:hover {
+  transform: scale(1.05);
+  background-color: hsl(180, 100%, 30%);
 }

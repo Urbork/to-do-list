@@ -9,8 +9,7 @@
   };
 
   const toggleDoneTask = (taskIndex) => {
-    // tasks = tasks.map( ) immutability
-
+    // immutability
     tasks[taskIndex].done = !tasks[taskIndex].done;
 
     render();
@@ -61,6 +60,28 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
   };
 
+  const toggleHideDone = () => {};
+
+  const setAllDone = () => {
+    tasks = tasks.map((task) =>
+      task.done === false ? { ...task, done: true } : task
+    );
+    render();
+  };
+
+  const bindButtonsEvents = () => {
+    // // IF, sprawdzić czy przycisk istnieje
+    //
+    // const hideAllDoneElement = document.querySelector(".js-hideAllDone");
+    // hideAllDoneElement.addEventListener("click", () => {
+    //   toggleHideDone();
+    // });
+    // const setAllDoneElement = document.querySelector(".js-setAllDone");
+    // setAllDoneElement.addEventListener("click", () => {
+    //   setAllDone();
+    // });
+  };
+
   const renderButtons = () => {
     let htmlButtons = "";
 
@@ -69,14 +90,10 @@
     } else {
       htmlButtons += `
     <button class="tasks__headerButton js-hideAllDone">Ukryj ukończone</button>
-    <button class="tasks__headerButton js-allDone">Ukończ wszystkie</button>`;
+    <button class="tasks__headerButton js-setAllDone">Ukończ wszystkie</button>`;
     }
 
     document.querySelector(".js-buttons").innerHTML = htmlButtons;
-  };
-
-  const bindButtonsEvents = () => {
-    // IF, sprawdzić czy przycisk istnieje
   };
 
   const render = () => {

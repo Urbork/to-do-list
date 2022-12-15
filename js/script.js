@@ -21,6 +21,17 @@
     render();
   };
 
+  const toggleHideDone = () => {};
+
+  const setAllDone = () => {
+    tasks = tasks.map((task) => ({
+      ...task,
+      done: true,
+    }));
+
+    render();
+  };
+
   const bindToggleDoneEvents = () => {
     const doneButtonElements = document.querySelectorAll(".js-done");
     doneButtonElements.forEach((doneButtonElement, index) => {
@@ -60,26 +71,19 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
   };
 
-  const toggleHideDone = () => {};
-
-  const setAllDone = () => {
-    tasks = tasks.map((task) =>
-      task.done === false ? { ...task, done: true } : task
-    );
-    render();
-  };
-
   const bindButtonsEvents = () => {
-    // // IF, sprawdzić czy przycisk istnieje
-    //
-    // const hideAllDoneElement = document.querySelector(".js-hideAllDone");
-    // hideAllDoneElement.addEventListener("click", () => {
-    //   toggleHideDone();
-    // });
-    // const setAllDoneElement = document.querySelector(".js-setAllDone");
-    // setAllDoneElement.addEventListener("click", () => {
-    //   setAllDone();
-    // });
+    if (tasks.length === 0) {
+      return;
+    } else {
+      const hideAllDoneElement = document.querySelector(".js-hideAllDone");
+      hideAllDoneElement.addEventListener("click", () => {
+        toggleHideDone();
+      });
+      const setAllDoneElement = document.querySelector(".js-setAllDone");
+      setAllDoneElement.addEventListener("click", () => {
+        setAllDone();
+      });
+    }
   };
 
   const renderButtons = () => {
@@ -88,7 +92,7 @@
     if (tasks.length === 0) {
       htmlButtons;
     } else {
-      htmlButtons += `
+      htmlButtons = `
     <button class="tasks__headerButton js-hideAllDone">Ukryj ukończone</button>
     <button class="tasks__headerButton js-setAllDone">Ukończ wszystkie</button>`;
     }
@@ -124,7 +128,6 @@
     render();
 
     const formElement = document.querySelector(".js-form");
-
     formElement.addEventListener("submit", onFormSubmit);
   };
 

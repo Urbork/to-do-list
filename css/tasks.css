@@ -84,7 +84,7 @@
 }
 
 .tasks__listItem--hidden {
-  /* display: none; */
+  display: none;
 }
 
 .tasks__listItemText--done {

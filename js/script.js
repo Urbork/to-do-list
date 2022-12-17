@@ -1,6 +1,6 @@
 {
   let tasks = [];
-  let hideDoneTasks = false; // kliknięcie przełącza
+  let hideDoneTasks = false;
 
   const addNewTask = (newTaskContent) => {
     tasks = [{ content: newTaskContent }, ...tasks];
@@ -9,9 +9,6 @@
   };
 
   const toggleDoneTask = (taskIndex) => {
-    // immutability
-    // tasks[taskIndex].done = !tasks[taskIndex].done;
-
     tasks = [
       ...tasks.slice(0, taskIndex),
       { ...tasks[taskIndex], done: !tasks[taskIndex].done },
@@ -28,7 +25,9 @@
   };
 
   const toggleHideDone = () => {
-    // ?!?!?!?
+    hideDoneTasks = !hideDoneTasks;
+
+    render();
   };
 
   const setAllDone = () => {
@@ -63,7 +62,9 @@
 
     for (const task of tasks) {
       htmlString += `
-      <li class="tasks__listItem">
+      <li class="tasks__listItem
+      ${hideDoneTasks && task.done ? "tasks__listItem--hidden" : ""}
+      ">
         <button class="tasks__button js-done">
           ${task.done ? "✓" : ""}
         </button>
@@ -101,7 +102,8 @@
       htmlButtons;
     } else {
       htmlButtons = `
-    <button class="tasks__headerButton js-hideAllDone">Ukryj ukończone</button>
+    <button class="tasks__headerButton js-hideAllDone">
+    ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
     <button class="tasks__headerButton js-setAllDone">Ukończ wszystkie</button>`;
     }
 

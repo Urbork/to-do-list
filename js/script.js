@@ -83,16 +83,15 @@
   const bindButtonsEvents = () => {
     if (tasks.length === 0) {
       return;
-    } else {
-      const hideAllDoneElement = document.querySelector(".js-hideAllDone");
-      hideAllDoneElement.addEventListener("click", () => {
-        toggleHideDone();
-      });
-      const setAllDoneElement = document.querySelector(".js-setAllDone");
-      setAllDoneElement.addEventListener("click", () => {
-        setAllDone();
-      });
     }
+    const hideAllDoneElement = document.querySelector(".js-hideAllDone");
+    hideAllDoneElement.addEventListener("click", () => {
+      toggleHideDone();
+    });
+    const setAllDoneElement = document.querySelector(".js-setAllDone");
+    setAllDoneElement.addEventListener("click", () => {
+      setAllDone();
+    });
   };
 
   const renderButtons = () => {
@@ -102,9 +101,13 @@
       htmlButtons;
     } else {
       htmlButtons = `
-    <button class="tasks__headerButton js-hideAllDone">
-    ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
-    <button class="tasks__headerButton js-setAllDone">Ukończ wszystkie</button>`;
+      <button class="tasks__headerButton js-hideAllDone">
+        ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+      </button>
+      <button class="tasks__headerButton js-setAllDone"
+      ${tasks.every(({ done }) => done) ? " disabled" : ""}>
+        Ukończ wszystkie
+      </button>`;
     }
 
     document.querySelector(".js-buttons").innerHTML = htmlButtons;

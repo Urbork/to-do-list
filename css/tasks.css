@@ -27,9 +27,6 @@
   }
 }
 
-.tasks__heading {
-}
-
 .tasks__buttons {
   width: 100%;
 }
@@ -44,6 +41,11 @@
 
 .tasks__headerButton:hover {
   color: hsl(180, 100%, 30%);
+}
+
+.tasks__headerButton:disabled {
+  color: lightgray;
+  cursor: auto;
 }
 
 .tasks__list {
@@ -90,7 +92,3 @@
 .tasks__listItemText--done {
   text-decoration: line-through;
 }
-
-/* WERSJA ROBOCZA / DO ZMIANY?
-.tasks__toggleButton:disabled {  
-} */

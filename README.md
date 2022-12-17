@@ -6,7 +6,7 @@ It is a very simple to-do list. It's a list of tasks you need to complete or thi
 
 https://urbork.github.io/to-do-list/
 
-![preview](https://i.postimg.cc/L4PD6sHF/preview.jpg)
+![preview](https://i.postimg.cc/Pf60yLst/preview2.jpg)
 
 ## Technologies used:
 

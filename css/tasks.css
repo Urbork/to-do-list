@@ -20,6 +20,10 @@
   }
 }
 
+.tasks__heading {
+  width: 100%;
+}
+
 .tasks__list {
   padding: 8px 16px;
   list-style: none;

@@ -18,34 +18,6 @@
     display: flex;
     flex-direction: column;
   }
-
-  .tasks__buttons {
-    margin-bottom: 8px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-
-.tasks__buttons {
-  width: 100%;
-}
-
-.tasks__headerButton {
-  background-color: white;
-  color: teal;
-  border: none;
-  transition: 1s;
-  cursor: pointer;
-}
-
-.tasks__headerButton:hover {
-  color: hsl(180, 100%, 30%);
-}
-
-.tasks__headerButton:disabled {
-  color: lightgray;
-  cursor: auto;
 }
 
 .tasks__list {

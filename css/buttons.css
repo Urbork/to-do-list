@@ -1,0 +1,29 @@
+@media (max-width: 767px) {
+  .buttons {
+    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.buttons {
+  width: 100%;
+}
+
+.buttons__button {
+  background-color: white;
+  color: teal;
+  border: none;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.buttons__button:hover {
+  color: hsl(180, 100%, 30%);
+}
+
+.buttons__button:disabled {
+  color: lightgray;
+  cursor: auto;
+}
